@@ -6,7 +6,7 @@ module Spree
 
     def times_used
       # Orders that have used the code
-      orders_ids = Spree::OrdersPromotion.where(promotion_code_id: id).pluck(:order_id)
+      orders_ids = Spree::OrderPromotion.where(promotion_code_id: id).pluck(:order_id)
 
       # Promotion Actions associated with the promotion
       promotion_actions_ids = promotion.actions.pluck('spree_promotion_actions.id')
